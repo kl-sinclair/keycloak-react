@@ -1,8 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { KeycloakInstance } from 'keycloak-js';
 
-function App() {
+const App: React.FC<{keycloak: KeycloakInstance}> = ({ keycloak }) => {
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +19,9 @@ function App() {
         >
           Learn React
         </a>
+        <button onClick={() => keycloak.logout()}>
+          LOGOUT
+        </button>
       </header>
     </div>
   );

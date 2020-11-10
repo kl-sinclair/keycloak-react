@@ -21,7 +21,7 @@ keycloak.init({onLoad: "login-required", pkceMethod: "S256"}).then((auth: boolea
   console.log(keycloak);
   ReactDOM.render(
     <React.StrictMode>
-      <App />
+      <App keycloak={keycloak}/>
     </React.StrictMode>,
     document.getElementById('root')
   );
